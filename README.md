@@ -12,6 +12,8 @@ on:
   push:
     branches:
       - '*'
+permissions:
+  contents: write
 jobs:
   sync-branch:
     runs-on: ubuntu-latest
@@ -43,6 +45,8 @@ on:
   push:
     branches:
       - 'release/*'
+permissions:
+  contents: write
 jobs:
   merge-branch:
     runs-on: ubuntu-latest
@@ -65,6 +69,8 @@ on:
   push:
     branches:
       - 'release/*'
+permissions:
+  contents: write
 jobs:
   merge-branch:
     runs-on: ubuntu-latest
@@ -94,6 +100,8 @@ name: Merge branch with labeled
 on:
   pull_request:
     types: [labeled]
+permissions:
+  contents: write
 jobs:
   merge-branch:
     runs-on: ubuntu-latest
